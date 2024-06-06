@@ -124,9 +124,21 @@ def from_foot(measured_value):
     print("Nanometer: ", measured_value * 304800000)
     print("Mile: ", measured_value / 5280)
     print("Yard: ", measured_value / 3)
-    # print("Foot: ", measured_value * 3)
     print("Inch: ", measured_value / 12)
     print("Light Year: ", (measured_value * 0.348) / 9.461, "X 10^16 km/ly")
+    
+def from_inch(measured_value):
+    print("Meter: ", measured_value * 0.0254)
+    print("Kilometer: ", (measured_value * 0.0254) / 1000)
+    print("Centimeter: ", measured_value * 2.54)
+    print("Millimeter: ", measured_value * 25.4)
+    print("Micrometer: ", measured_value * 25400)
+    print("Nanometer: ", measured_value * 25400000)
+    print("Mile: ", measured_value / 63360)
+    print("Yard: ", measured_value / 36)
+    print("Foot: ", measured_value / 12)
+    # print("Inch: ", measured_value / 12)
+    print("Light Year: ", (measured_value * 0.0254) / 9.461, "X 10^16 m/ly")
         
         
 
@@ -158,6 +170,8 @@ def length():
         from_yard(measured_value)
     elif (measured_unit == 9):
         from_yard(measured_value)
+    elif (measured_unit == 10):
+        from_inch(measured_value)
 
 
 print("Choose correct option by the number")
