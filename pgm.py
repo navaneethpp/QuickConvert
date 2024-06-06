@@ -137,8 +137,20 @@ def from_inch(measured_value):
     print("Mile: ", measured_value / 63360)
     print("Yard: ", measured_value / 36)
     print("Foot: ", measured_value / 12)
-    # print("Inch: ", measured_value / 12)
     print("Light Year: ", (measured_value * 0.0254) / 9.461, "X 10^16 m/ly")
+    
+
+def from_light_year(measured_value):
+    print("Meter: ", (measured_value * 9.461) * pow(10, 12))
+    print("Kilometer: ", (measured_value * 9.461) * pow(10, 12))
+    print("Centimeter: ", (measured_value * 9.461) * pow(10, 17))
+    print("Millimeter: ", (measured_value * 9.461) * pow(10, 18))
+    print("Micrometer: ", (measured_value * 9.461) * pow(10, 21))
+    print("Nanometer: ", (measured_value * 9.461) * pow(10, 24))
+    print("Mile: ", (measured_value * 9.461) * pow(10, 12))
+    print("Yard: ", (measured_value * 9.461) * pow(10, 15) * 1.09361)
+    print("Foot: ", (measured_value * 9.461) * pow(10, 15) * 3.28084)
+    print("Inch: ", (measured_value * 9.461) * pow(10, 15) * 39.3701)
         
         
 
@@ -172,6 +184,11 @@ def length():
         from_foot(measured_value)
     elif (measured_unit == 10):
         from_inch(measured_value)
+    elif (measured_unit == 11):
+        from_light_year(measured_value)
+    else:
+        print("Error occurred. Please try again!")
+        return
 
 
 print("Choose correct option by the number")
