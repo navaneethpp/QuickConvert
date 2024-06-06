@@ -169,7 +169,7 @@ def length():
     elif (measured_unit == 8):
         from_yard(measured_value)
     elif (measured_unit == 9):
-        from_yard(measured_value)
+        from_foot(measured_value)
     elif (measured_unit == 10):
         from_inch(measured_value)
 
