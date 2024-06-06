@@ -83,12 +83,25 @@ def from_nanometer(measured_value):
     print("Centimeter: ", measured_value / 100000000)
     print("Millimeter: ", measured_value / 1000)
     print("Micrometer: ", measured_value / 1000)
-    # print("Nanometer: ", measured_value * 1000)
     print("Mile: ", (measured_value / 1000000000) * 0.000621371)
     print("Yard: ", measured_value * 0.000000000946)
     print("Foot: ", (measured_value / 1000000000) * 1.0936)
     print("Inch: ", measured_value * 0.00000003937)
     print("Light Year: ", (measured_value / 1000000000000) * 9.46, "X 10^12 km/ly")
+    
+
+def from_mile(measured_value):
+    print("Meter: ", measured_value * 1,609.34)
+    print("Kilometer: ", measured_value * 1.60934)
+    print("Centimeter: ", measured_value * 1.60934 * 100)
+    print("Millimeter: ", measured_value * 1609344)
+    print("Micrometer: ", measured_value * 1,609,344,000)
+    print("Nanometer: ", measured_value * 1609.34 * 1000000000)
+    # print("Mile: ", (measured_value / 1000000000) * 0.000621371)
+    print("Yard: ", measured_value * 1760)
+    print("Foot: ", measured_value * 5,280)
+    print("Inch: ", measured_value * 63,360)
+    print("Light Year: ", measured_value / 9.461, "X 10^12 km/ly")
         
         
 
@@ -114,6 +127,8 @@ def length():
         from_micrometer(measured_value)
     elif (measured_unit == 6):
         from_nanometer(measured_value)
+    elif (measured_unit == 7):
+        from_mile(measured_value)
 
 
 print("Choose correct option by the number")
