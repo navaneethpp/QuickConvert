@@ -2,7 +2,7 @@
     Name: QuickConverter
     Description: A simple and efficient tool for converting length units.
     Date of Creation: 06/06/2024
-    Last Modified On: 06/06/2024
+    Last Modified On: 07/06/2024
     Creator: Navaneeth P P
     GitHub Profile: navaneethpp
     Requirements: None
@@ -151,7 +151,20 @@ def from_light_year(measured_value):
     print("Yard: ", (measured_value * 9.461) * pow(10, 15) * 1.09361)
     print("Foot: ", (measured_value * 9.461) * pow(10, 15) * 3.28084)
     print("Inch: ", (measured_value * 9.461) * pow(10, 15) * 39.3701)
-        
+    
+    
+    
+def from_celsius(measured_value):
+    print("Kelvin: ", measured_value + 273.15)
+    print("Fahrenheit: ", (measured_value * 1.8) + 32)
+    
+def from_kelvin(measured_value):
+    print("Celsius: ", measured_value - 273.16)
+    print("Fahrenheit: ", (1.8 * (measured_value - 273.15)) + 32)
+    
+def from_fahrenheit(measured_value):
+    print("Celsius: ", (0.555555556 * (measured_value - 32)))
+    print("Kelvin: ", (0.555555556 * (measured_value - 32)) + 273.15)
         
 
 def length():
@@ -190,6 +203,26 @@ def length():
         print("Error occurred. Please try again!")
         return
 
+def temperature():
+    print()
+    print("Choose measured value unit")
+    print("1. Celsius\n2. Kelvin\n3. Fahrenheit")
+    measured_unit = int(input("Enter the value: "))
+    print()
+    measured_value = float(input("Enter the measurement: "))
+    
+    if (measured_unit == 1):
+        from_celsius(measured_value)
+    elif (measured_unit == 2):
+        from_kelvin(measured_value)
+    elif (measured_unit == 3):
+        from_fahrenheit(measured_value)
+    else:
+        print("Error occurred. Please try again!")
+    
+    
+    
+    
 
 print("Choose correct option by the number")
 print("1. Length\n2. Temperature\n3. Area\n4. Volume\n5. Weight\n6. Time")
@@ -197,3 +230,5 @@ option = int(input("Enter your choice: "))
 
 if option == 1:
     length()
+if option == 2:
+    temperature()
