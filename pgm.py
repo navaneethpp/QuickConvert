@@ -7,9 +7,11 @@
     GitHub Profile: navaneethpp
     Requirements: Python 3.6
     Notes: Not completed,
-            Weight - Gram
+            Time - Millisecond
     To do:  * Selection Display
             * Other conversions
+            * Section exit issue
+            * Adding Infinite Loop
 """
 
 def from_meter(measured_value):
@@ -363,13 +365,74 @@ def from_kilogram(measured_value):
     
 def from_gram(measured_value):
     print("Kilogram", measured_value * 0.001)
-    # print("Gram: ", measured_value * 1000)
     print("Milligram: ", measured_value * 1000)
     print("Metric Ton: ", measured_value * 1 * (10 ** -6))
     print("Pound: ", measured_value * 0.00220462)
     print("Carrat: ", measured_value * 5)
     print("Atomic Mass Unit: ", measured_value * 6.02214179 * (10 ** 23))
     
+def from_milligram(measured_value):
+    print("Kilogram", measured_value * 1 * (10 ** -6))
+    print("Gram: ", measured_value * 0.001)
+    print("Metric Ton: ", measured_value * 1 * (10 ** -9))
+    print("Pound: ", measured_value * 2.20462 * (10 ** -6))
+    print("Carrat: ", measured_value * 0.005)
+    print("Atomic Mass Unit: ", measured_value * 6.02214179 * (10 ** 20))
+    
+def from_metric_ton(measured_value):
+    print("Kilogram", measured_value * 1000)
+    print("Gram: ", measured_value * 1 * (10 ** 6))
+    print("Milligram: ", measured_value * 1 * (10 ** 9))
+    print("Pound: ", measured_value * 2204.62)
+    print("Carrat: ", measured_value * 5 * (10 ** 6))
+    print("Atomic Mass Unit: ", measured_value * 6.02214179 * (10 ** 29))
+    
+def from_pound(measured_value):
+    print("Kilogram", measured_value * 0.45359237)
+    print("Gram: ", measured_value * 453.59237)
+    print("Milligram: ", measured_value * 453592.37)
+    print("Metric Ton: ", measured_value * 0.00045359237)
+    print("Carrat: ", measured_value * 2267.96185)
+    print("Atomic Mass Unit: ", measured_value * 2.73159734 * (10 ** 26))
+    
+def from_carrat(measured_value):
+    print("Kilogram", measured_value * 0.0002)
+    print("Gram: ", measured_value * 0.2)
+    print("Milligram: ", measured_value * 200)
+    print("Metric Ton: ", measured_value * 2 * (10 ** -7))
+    print("Pound: ", measured_value * 0.000440925)
+    print("Atomic Mass Unit: ", measured_value * 1.20442881 * (10 ** 23))
+    
+def from_amu(measured_value):
+    print("Kilogram", measured_value * 1.66053906660 * (10 ** -27))
+    print("Gram: ", measured_value * 1.66053906660 * (10 ** -24))
+    print("Milligram: ", measured_value * 1.66053906660 * (10 ** -21))
+    print("Metric Ton: ", measured_value * 1.66053906660 * (10 ** -30))
+    print("Pound: ", measured_value * 3.660867 * (10 ** -27))
+    print("Carrat: ", measured_value * 8.3027 * (10 ** -23))
+    
+def from_second(measured_value):
+    print("Millisecond: ", measured_value * 1000)
+    print("Microsecond: ", measured_value * 1000000)
+    print("Nanosecond: ", measured_value * 1000000000)
+    print("Minute: ", measured_value / 60)
+    print("Hour: ", measured_value / 3600)
+    print("Day: ", measured_value / 86400)
+    print("Week: ", measured_value / 604800)
+    print("Month: ", measured_value / 2629746)
+    print("Year: ", measured_value / 31557600)
+    
+def from_millisecond(measured_value):
+    print("Second: ", measured_value / 1000)
+    # print("Millisecond: ", measured_value * 1000)
+    print("Microsecond: ", measured_value * 1000)
+    print("Nanosecond: ", measured_value * 1000000)
+    print("Minute: ", measured_value / 60000)
+    print("Hour: ", measured_value / 3600000)
+    print("Day: ", measured_value / 86400000)
+    print("Week: ", measured_value / 604800000)
+    print("Month: ", measured_value / 2629746000)
+    print("Year: ", measured_value / 31557600000)
 
 def length():
     print()
@@ -499,14 +562,38 @@ def weight():
         from_kilogram(measured_value)
     elif (measured_unit == 2):
         from_gram(measured_value)
+    elif measured_unit == 3:
+        from_milligram(measured_value)
+    elif measured_unit == 4:
+        from_metric_ton(measured_value)
+    elif measured_unit == 5:
+        from_pound(measured_value)
+    elif measured_unit == 6:
+        from_carrat(measured_value)
+    elif measured_unit == 7:
+        from_amu(measured_value)
     elif (measured_unit == 0):
         print("Exiting...")
     else:
         print("Error Occurred. Please try again!")
+        
+def time():
+    print()
+    print("Choose measured value unit")
+    print("1. Second\n2. Millisecond\n3. Microsecond\n4. Nanosecond\n5. Minute\n6. Hour\n7. Day\n8. Week\n9. Month\n10. Year")
+    measured_unit = int(input("Enter the value: "))
+    print()
+    measured_value = float(input("Enter the measurement: "))
     
+    if measured_unit == 1:
+        from_second(measured_value)
+    elif measured_unit == 2:
+        from_millisecond(measured_value)
+    elif measured_unit == 0:
+        print("Exiting")
+    else:
+        print("Error occurred. Please try again!")
     
-    
-
 print("Choose correct option by the number")
 print("1. Length\n2. Temperature\n3. Area\n4. Volume\n5. Weight\n6. Time\n0. Exit")
 option = int(input("Enter your choice: "))
@@ -521,5 +608,7 @@ elif option == 4:
     volume()
 elif option == 5:
     weight()
+elif option == 6:
+    time()
 elif option == 0:
     print("Exiting...")
