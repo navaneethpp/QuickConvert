@@ -165,7 +165,59 @@ def from_kelvin(measured_value):
 def from_fahrenheit(measured_value):
     print("Celsius: ", (0.555555556 * (measured_value - 32)))
     print("Kelvin: ", (0.555555556 * (measured_value - 32)) + 273.15)
+    
+
+def from_square_meter(measured_value):
+    print("Square Kilometer: ", measured_value / 1000000)
+    print("Square Centimeter: ", measured_value * 10000)
+    print("Square Millimeter: ", measured_value * 1000000)
+    print("Square Micrometer: ", measured_value * 1 * pow(10, 12))
+    print("Hectare: ", measured_value / 10000)
+    print("Square Mile: ", measured_value / 2589988.11)
+    print("Square Yard: ", measured_value * 1.19599)
+    print("Square Foot: ", measured_value * 10.7639)
+    print("Square Inch: ", measured_value * 1550.0031)
+    print("Acre: ", measured_value / 4,046.85642)
+    
+    
+def from_square_kilometer(measured_value):
+    print("Square Meter: ", measured_value * 1000000)
+    print("Square Centimeter: ", measured_value * pow(10, 10))
+    print("Square Millimeter: ", measured_value * pow(10, 12))
+    print("Square Micrometer: ", measured_value * 1 * pow(10, 12))
+    print("Hectare: ", measured_value / 100)
+    print("Square Mile: ", measured_value / 1.93051)
+    print("Square Yard: ", measured_value * 1195990.05)
+    print("Square Foot: ", measured_value * 1076391040)
+    print("Square Inch: ", measured_value * 1550.0031)
+    print("Acre: ", measured_value / 247.105)
+    
+def from_square_centimeter(measured_value):
+    print("Square Meter: ", measured_value / 10000)
+    print("Square Kilometer: ", measured_value / pow(10, 10))
+    print("Square Millimeter: ", measured_value * 100)
+    print("Square Micrometer: ", measured_value * 1 * pow(10, 8))
+    print("Hectare: ", measured_value / 100000000)
+    print("Square Mile: ", measured_value / 25899881103.36)
+    print("Square Yard: ", measured_value / 8361.2736)
+    print("Square Foot: ", measured_value / 929.0304)
+    print("Square Inch: ", measured_value / 6.4516)
+    print("Acre: ", measured_value / 40468564.2)
         
+        
+def from_square_millimeter(measured_value):
+    print("Square Meter: ", measured_value / 1000000)
+    print("Square Kilometer: ", measured_value / pow(10, 12))
+    print("Square Centimeter: ", measured_value / 100)
+    # print("Square Millimeter: ", measured_value * 100)
+    print("Square Micrometer: ", measured_value * 10 ** 6)
+    print("Hectare: ", measured_value / 10 ** 10)
+    print("Square Mile: ", measured_value / 2.58998811 * 10 ** 12)
+    print("Square Yard: ", measured_value / 836127.36)
+    print("Square Foot: ", measured_value / 92903.04)
+    print("Square Inch: ", measured_value / 645.16)
+    print("Acre: ", measured_value / 40468564.2 * 10 ** 9)
+    
 
 def length():
     print()
@@ -219,6 +271,24 @@ def temperature():
         from_fahrenheit(measured_value)
     else:
         print("Error occurred. Please try again!")
+        
+
+def area():
+    print()
+    print("Choose measured value unit")
+    print("1. Square Meter\n2. Square Kilometer\n3. Square Centimeter\n4. Square Millimeter\n5. Square Micrometer\n6. Hectare\n7. Square Mile\n8. Square Yard\n9. Square Foot\n9. Square Inch\n10. Acre")
+    measured_unit = int(input("Enter the value: "))
+    print()
+    measured_value = float(input("Enter the measurement: "))
+    
+    if (measured_unit == 1):
+        from_square_meter(measured_value)
+    elif (measured_unit == 2):
+        from_square_kilometer(measured_value)
+    elif (measured_unit == 3):
+        from_square_centimeter(measured_value)
+    elif (measured_unit == 4):
+        from_square_millimeter(measured_value)
     
     
     
@@ -232,3 +302,5 @@ if option == 1:
     length()
 if option == 2:
     temperature()
+if option == 3:
+    area()
