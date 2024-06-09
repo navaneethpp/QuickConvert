@@ -6,17 +6,20 @@
     Creator: Navaneeth P P
     GitHub Profile: github.com/navaneethpp
     Requirements:   
-                * Python 3.6,
-                * OS Module
+        * Python 3.6,
+        * OS Module
     Notes: None
     To do:
         * Back Button
         * Negative Measurements
-        * Exit conformation
+        * Exit conformation - return
+        * Readability
 """
 
-import os
+import os, time
 
+def sl():
+    time.sleep(3)
 # Function for clearing the screen
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -24,8 +27,9 @@ def clear_screen():
 # Function for exiting the program
 def exit_program():
     clear_screen()
-    print("Exiting...\n")
-    quit()
+    exit = input("Are you sure you want to exit?[y/n]")
+    if exit.lower() == 'y':
+        quit()
 
 def from_meter():
     clear_screen()
@@ -34,16 +38,21 @@ def from_meter():
     measured_value = float(input("Enter the measurement: "))
     print()
     
-    print("Kilometer: ", measured_value / 1000)
-    print("Centimeter: ", measured_value * 100)
-    print("Millimeter: ", measured_value * 1000)
-    print("Micrometer: ", measured_value * 1000000)
-    print("Nanometer: ", measured_value * 1000000000)
-    print("Mile: ", measured_value * 0.000621371)
-    print("Yard: ", measured_value * 1.0936)
-    print("Foot: ", measured_value * 3.2808)
-    print("Inch: ", measured_value * 39.37)
-    print("Light Year: ", (measured_value / 1000) * 9.461, "X 10^15 km/ly")
+    if measured_value >= 0:
+        print("Kilometer: ", measured_value / 1000)
+        print("Centimeter: ", measured_value * 100)
+        print("Millimeter: ", measured_value * 1000)
+        print("Micrometer: ", measured_value * 1000000)
+        print("Nanometer: ", measured_value * 1000000000)
+        print("Mile: ", measured_value * 0.000621371)
+        print("Yard: ", measured_value * 1.0936)
+        print("Foot: ", measured_value * 3.2808)
+        print("Inch: ", measured_value * 39.37)
+        print("Light Year: ", (measured_value / 1000) * 9.461, "X 10^15 km/ly")
+    else:
+        print("Negative number can't be a measurement")
+        sl()
+        from_meter()
 
 def from_kilometer():
     clear_screen()
@@ -52,6 +61,7 @@ def from_kilometer():
     measured_value = float(input("Enter the measurement: "))
     print()
     
+
     print("Meter: ", measured_value * 1000)
     print("Centimeter: ", measured_value * 100000)
     print("Millimeter: ", measured_value * 1000000)
@@ -976,7 +986,7 @@ def time():
 clear_screen()
 print("\t\tQuickConvertor\t\t\n")
 option = 1
-while (option != 0):
+while (True):
     print(exit)
     print("1. Length\n2. Temperature\n3. Area\n4. Volume\n5. Weight\n6. Time\n0. Exit")
     option = int(input("Enter your choice: "))
