@@ -424,7 +424,6 @@ def from_second(measured_value):
     
 def from_millisecond(measured_value):
     print("Second: ", measured_value / 1000)
-    # print("Millisecond: ", measured_value * 1000)
     print("Microsecond: ", measured_value * 1000)
     print("Nanosecond: ", measured_value * 1000000)
     print("Minute: ", measured_value / 60000)
@@ -433,6 +432,94 @@ def from_millisecond(measured_value):
     print("Week: ", measured_value / 604800000)
     print("Month: ", measured_value / 2629746000)
     print("Year: ", measured_value / 31557600000)
+    
+def from_microsecond(measured_value):
+    print("Second: ", measured_value / 1000000)
+    print("Millisecond: ", measured_value / 1000)
+    print("Nanosecond: ", measured_value * 1000)
+    print("Minute: ", measured_value / 60000000)
+    print("Hour: ", measured_value / 3600000000)
+    print("Day: ", measured_value / 86400000000)
+    print("Week: ", measured_value / 604800000000)
+    print("Month: ", measured_value / 2629746000000)
+    print("Year: ", measured_value / 31557600000000)
+    
+def from_nanosecond(measured_value):
+    print("Second: ", measured_value / 1000000000)
+    print("Millisecond: ", measured_value / 1000000)
+    print("Microsecond: ", measured_value / 1000)
+    print("Minute: ", measured_value / 60000000000)
+    print("Hour: ", measured_value / 3600000000000)
+    print("Day: ", measured_value / 86400000000000)
+    print("Week: ", measured_value / 604800000000000)
+    print("Month: ", measured_value / 2629746000000000)
+    print("Year: ", measured_value / 31557600000000000)
+    
+def from_minute(measured_value):
+    print("Second: ", measured_value * 60)
+    print("Millisecond: ", measured_value * 60000)
+    print("Microsecond: ", measured_value * 60000000)
+    print("Nanosecond: ", measured_value * 60000000000)
+    print("Hour: ", measured_value / 60)
+    print("Day: ", measured_value / 1440)
+    print("Week: ", measured_value / 10080)
+    print("Month: ", measured_value / 43830)
+    print("Year: ", measured_value / 525600)
+    
+def from_hour(measured_value):
+    print("Second: ", measured_value * 3600)
+    print("Millisecond: ", measured_value * 3.6 * (10 ** 6))
+    print("Microsecond: ", measured_value * 3.6 * (10 ** 9))
+    print("Nanosecond: ", measured_value * 3.6 * (10 ** 12))
+    print("Minute: ", measured_value * 60)
+    print("Day: ", measured_value / 24)
+    print("Week: ", measured_value / 168)
+    print("Month: ", measured_value / 730.5)
+    print("Year: ", measured_value / 8766)
+    
+def from_day(measured_value):
+    print("Second: ", measured_value * 86400)
+    print("Millisecond: ", measured_value * 8.64 * (10 ** 7))
+    print("Microsecond: ", measured_value * 8.64 * (10 ** 10))
+    print("Nanosecond: ", measured_value * 8.64 * (10 ** 13))
+    print("Minute: ", measured_value * 1440)
+    print("Hour: ", measured_value * 24)
+    print("Week: ", measured_value / 7)
+    print("Month: ", measured_value / 30.44)
+    print("Year: ", measured_value / 365.25)
+    
+def from_week(measured_value):
+    print("Second: ", measured_value * 604800)
+    print("Millisecond: ", measured_value * 6.048 * (10 ** 8))
+    print("Microsecond: ", measured_value * 6.048 * (10 ** 11))
+    print("Nanosecond: ", measured_value * 6.048 * (10 ** 14))
+    print("Minute: ", measured_value * 10080)
+    print("Hour: ", measured_value * 168)
+    print("Day: ", measured_value * 7)
+    print("Month: ", measured_value / 434524)
+    print("Year: ", measured_value / 52.1429)
+    
+def from_month(measured_value):
+    print("Second: ", measured_value * 30.44 * 24 * 60 * 60)
+    print("Millisecond: ", measured_value * 30.44 * 24 * 60 * 60 * (10 ** 3))
+    print("Microsecond: ", measured_value * 30.44 * 24 * 60 * 60 * (10 ** 6))
+    print("Nanosecond: ", measured_value * 30.44 * 24 * 60 * 60 * (10 ** 9))
+    print("Minute: ", measured_value * 30.44 * 24 * 60)
+    print("Hour: ", measured_value * 30.44 * 24)
+    print("Day: ", measured_value * 30.44)
+    print("Week: ", measured_value * 4.34524)
+    print("Year: ", measured_value / 12)
+    
+def from_year(measured_value):
+    print("Second: ", measured_value * 365.25 * 24 * 60 * 60)
+    print("Millisecond: ", measured_value * 365.25 * 24 * 60 * 60 * (10 ** 3))
+    print("Microsecond: ", measured_value * 365.25 * 24 * 60 * 60 * (10 ** 6))
+    print("Nanosecond: ", measured_value * 365.25 * 24 * 60 * 60 * (10 ** 9))
+    print("Minute: ", measured_value * 365.25 * 24 * 60)
+    print("Hour: ", measured_value * 365.25 * 24)
+    print("Day: ", measured_value * 365.25)
+    print("Week: ", measured_value * 52.1429)
+    print("Month: ", measured_value * 12)
 
 def length():
     print()
@@ -589,6 +676,22 @@ def time():
         from_second(measured_value)
     elif measured_unit == 2:
         from_millisecond(measured_value)
+    elif measured_unit == 3:
+        from_microsecond(measured_value)
+    elif measured_unit == 4:
+        from_nanosecond(measured_value)
+    elif measured_unit == 5:
+        from_minute(measured_value)
+    elif measured_unit == 6:
+        from_hour(measured_value)
+    elif measured_unit == 7:
+        from_day(measured_value)
+    elif measured_unit == 8:
+        from_week(measured_value)
+    elif measured_unit == 9:
+        from_month(measured_value)
+    elif measured_unit == 10:
+        from_year(measured_value)
     elif measured_unit == 0:
         print("Exiting")
     else:
