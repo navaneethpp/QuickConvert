@@ -10,7 +10,6 @@
         * os, time, itertools & sys Module
     Notes: None
     To do:
-        * Readability
         * Documentation
 """
 
@@ -46,7 +45,7 @@ def exit_program():
 # Function to handle negative measurements
 def error_handler():
     print("Negative number can't be a measurement")
-    loading_animation(1.5)
+    loading_animation(1.3)
     clear_screen()
     
 # Function for formatting the output
@@ -85,8 +84,6 @@ def from_meter():
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -124,8 +121,6 @@ def from_kilometer():
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -161,8 +156,6 @@ def from_centimeter():
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -199,8 +192,6 @@ def from_millimeter():
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -237,8 +228,6 @@ def from_micrometer():
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -279,8 +268,6 @@ def from_nanometer():
                 loading_animation(1)
                 break
         elif measured_value == 0:
-            print("Cannot convert 0 to other units")
-            loading_animation(1)
             continue
         else:
             error_handler()
@@ -313,8 +300,6 @@ def from_mile():
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -351,8 +336,6 @@ def from_yard():
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -389,8 +372,6 @@ def from_foot():
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -427,8 +408,6 @@ def from_inch():
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -465,8 +444,6 @@ def from_light_year():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -495,8 +472,6 @@ def from_celsius():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -525,8 +500,6 @@ def from_kelvin():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -555,8 +528,6 @@ def from_fahrenheit():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -593,8 +564,6 @@ def from_square_meter():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -630,8 +599,6 @@ def from_square_kilometer():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -668,8 +635,6 @@ def from_square_centimeter():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -706,8 +671,6 @@ def from_square_millimeter():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -744,8 +707,6 @@ def from_square_micrometer():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -783,8 +744,6 @@ def from_hectare():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -821,8 +780,6 @@ def from_square_mile():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -859,8 +816,6 @@ def from_square_yard():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -897,8 +852,6 @@ def from_square_foot():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -935,8 +888,6 @@ def from_square_inch():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -973,8 +924,6 @@ def from_acre():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1006,8 +955,6 @@ def from_cubic_meter():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1039,8 +986,6 @@ def from_cubic_kilometer():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1072,8 +1017,6 @@ def from_cubic_millimeter():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1105,8 +1048,6 @@ def from_liter():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1138,8 +1079,6 @@ def from_milliliter():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1171,8 +1110,6 @@ def from_us_gallon():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1205,8 +1142,6 @@ def from_kilogram():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1239,8 +1174,6 @@ def from_gram():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1273,8 +1206,6 @@ def from_milligram():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1307,8 +1238,6 @@ def from_metric_ton():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1341,8 +1270,6 @@ def from_pound():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1375,8 +1302,6 @@ def from_carrat():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1409,8 +1334,6 @@ def from_amu():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1447,8 +1370,6 @@ def from_second():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1484,8 +1405,6 @@ def from_millisecond():
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1521,8 +1440,6 @@ def from_microsecond(measured_value):
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1558,8 +1475,6 @@ def from_nanosecond(measured_value):
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1595,8 +1510,6 @@ def from_minute(measured_value):
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1632,8 +1545,6 @@ def from_hour(measured_value):
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1669,8 +1580,6 @@ def from_day(measured_value):
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1706,8 +1615,6 @@ def from_week(measured_value):
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1743,8 +1650,6 @@ def from_month(measured_value):
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
@@ -1780,8 +1685,6 @@ def from_year(measured_value):
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
             if (user_decision.lower() != 'y'):
-                print("Going back...")
-                loading_animation(1)
                 break
         elif measured_value == 0:
             print("Cannot convert 0 to other units")
