@@ -2,7 +2,7 @@
     Name: QuickConverter
     Description: A simple and efficient tool for converting length units.
     Date of Creation: 06/06/2024
-    Last Modified On: 09/06/2024
+    Last Modified On: 15/06/2024
     Creator: Navaneeth P P
     GitHub Profile: github.com/navaneethpp
     Requirements:   
@@ -11,6 +11,7 @@
     Notes: None
     To do:
         * Readability
+        * Documentation
 """
 
 import os
@@ -47,6 +48,10 @@ def error_handler():
     print("Negative number can't be a measurement")
     loading_animation(1.5)
     clear_screen()
+    
+# Function for formatting the output
+def format_number_with_commas(number):
+    return "{:,}".format(number)
 
 # Conversion from meter
 def from_meter():
@@ -66,16 +71,16 @@ def from_meter():
             continue
         
         if measured_value > 0:
-            print("Kilometer: ", measured_value / 1000)
-            print("Centimeter: ", measured_value * 100)
-            print("Millimeter: ", measured_value * 1000)
-            print("Micrometer: ", measured_value * 1000000)
-            print("Nanometer: ", measured_value * 1000000000)
-            print("Mile: ", measured_value * 0.000621371)
-            print("Yard: ", measured_value * 1.0936)
-            print("Foot: ", measured_value * 3.2808)
-            print("Inch: ", measured_value * 39.37)
-            print("Light Year: ", (measured_value / 1000) * 9.461, "X 10^15 km/ly")
+            print("Kilometer: ", format_number_with_commas(measured_value / 1000))
+            print("Centimeter: ", format_number_with_commas(measured_value * 100))
+            print("Millimeter: ", format_number_with_commas(measured_value * 1000))
+            print("Micrometer: ", format_number_with_commas(measured_value * 1000000))
+            print("Nanometer: ", format_number_with_commas(measured_value * 1000000000))
+            print("Mile: ", format_number_with_commas(measured_value * 0.000621371))
+            print("Yard: ", format_number_with_commas(measured_value * 1.0936))
+            print("Foot: ", format_number_with_commas(measured_value * 3.2808))
+            print("Inch: ", format_number_with_commas(measured_value * 39.37))
+            print("Light Year: ", format_number_with_commas((measured_value / 1000) * 9.461), "X 10^15 km/ly")
             print("_" * 40)
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -105,16 +110,16 @@ def from_kilometer():
             continue        
         
         if measured_value > 0:    
-            print("Meter: ", measured_value * 1000)
-            print("Centimeter: ", measured_value * 100000)
-            print("Millimeter: ", measured_value * 1000000)
-            print("Micrometer: ", measured_value * 1000000000)
-            print("Nanometer: ", measured_value * 10000000000000)
-            print("Mile: ", measured_value * 0.621)
-            print("Yard: ", measured_value * 1093.61)
-            print("Foot: ", measured_value * 3280.84)
-            print("Inch: ", measured_value * 39370.1)
-            print("Light Year: ", measured_value * 9.46, "X 10^12 km/ly")
+            print("Meter: ", format_number_with_commas(measured_value * 1000))
+            print("Centimeter: ", format_number_with_commas(measured_value * 100000))
+            print("Millimeter: ", format_number_with_commas(measured_value * 1000000))
+            print("Micrometer: ", format_number_with_commas(measured_value * 1000000000))
+            print("Nanometer: ", format_number_with_commas(measured_value * 10000000000000))
+            print("Mile: ", format_number_with_commas(measured_value * 0.621))
+            print("Yard: ", format_number_with_commas(measured_value * 1093.61))
+            print("Foot: ", format_number_with_commas(measured_value * 3280.84))
+            print("Inch: ", format_number_with_commas(measured_value * 39370.1))
+            print("Light Year: ", format_number_with_commas(measured_value * 9.46), "X 10^12 km/ly")
             print("_" * 40)
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -142,16 +147,16 @@ def from_centimeter():
             continue
         
         if measured_value > 0:
-            print("Meter: ", measured_value / 100)
-            print("Kilometer: ", measured_value / 100000)
-            print("Millimeter: ", measured_value * 10)
-            print("Micrometer: ", measured_value * 10000000)
-            print("Nanometer: ", measured_value * 10000000000)
-            print("Mile: ", measured_value * 0.0006213689)
-            print("Yard: ", measured_value * 1.0936132983)
-            print("Foot: ", measured_value * 0.0328)
-            print("Inch: ", measured_value * 0.3937)
-            print("Light Year: ", measured_value * 0.0000000946)
+            print("Meter: ", format_number_with_commas(measured_value * 0.01))
+            print("Kilometer: ", format_number_with_commas(measured_value * 0.00001))
+            print("Millimeter: ", format_number_with_commas(measured_value * 10))
+            print("Micrometer: ", format_number_with_commas(measured_value * 10000))
+            print("Nanometer: ", format_number_with_commas(measured_value * 10000000))
+            print("Mile: ", format_number_with_commas(measured_value * 0.0000062137))
+            print("Yard: ", format_number_with_commas(measured_value * 0.010936))
+            print("Foot: ", format_number_with_commas(measured_value * 0.032808))
+            print("Inch: ", format_number_with_commas(measured_value * 0.393701))
+            print("Light Year: ",  measured_value * 1.057 * (10 ** -18))
             print("_" * 40)
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -180,16 +185,16 @@ def from_millimeter():
             continue
         
         if measured_value > 0:
-            print("Meter: ", measured_value / 1000)
-            print("Kilometer: ", measured_value / 1000000)
-            print("Centimeter: ", measured_value / 10)
-            print("Micrometer: ", measured_value * 1000)
-            print("Nanometer: ", measured_value * 1000000000)
-            print("Mile: ", measured_value * 0.0000006213689)
-            print("Yard: ", measured_value * 0.00010936)
-            print("Foot: ", measured_value * 0.0032808)
-            print("Inch: ", measured_value * 0.03937)
-            print("Light Year: ", (measured_value / 1000000) * 9.46, "X 10^12 km/ly")
+            print("Meter: ", format_number_with_commas(measured_value / 1000))
+            print("Kilometer: ", format_number_with_commas(measured_value / 1000000))
+            print("Centimeter: ", format_number_with_commas(measured_value / 10))
+            print("Micrometer: ", format_number_with_commas(measured_value * 1000))
+            print("Nanometer: ", format_number_with_commas(measured_value * 1000000000))
+            print("Mile: ", format_number_with_commas(measured_value * 0.0000006213689))
+            print("Yard: ", format_number_with_commas(measured_value * 0.0010936))
+            print("Foot: ", format_number_with_commas(measured_value * 0.0032808))
+            print("Inch: ", format_number_with_commas(measured_value * 0.03937))
+            print("Light Year: ", format_number_with_commas((measured_value / 1000000) * 9.46), "X 10^12 km/ly")
             print("_" * 40)
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -218,16 +223,16 @@ def from_micrometer():
             continue
         
         if measured_value > 0:
-            print("Meter: ", measured_value / 1000000)
-            print("Kilometer: ", (measured_value / 10000) / 1000 )
-            print("Centimeter: ", measured_value / 10000)
-            print("Millimeter: ", measured_value / 1000)
-            print("Nanometer: ", measured_value * 1000)
-            print("Mile: ", (measured_value * 0.0000006213689) / 1000)
-            print("Yard: ", measured_value * 0.0000000010936)
-            print("Foot: ", measured_value * 3.28084, "10^-6")
-            print("Inch: ", measured_value * 0.00003937)
-            print("Light Year: ", (measured_value / 1000000000000) * 9.46, "X 10^12 km/ly")
+            print("Meter: ", format_number_with_commas(measured_value / 1000000))
+            print("Kilometer: ", format_number_with_commas((measured_value / 10000) / 1000))
+            print("Centimeter: ", format_number_with_commas(measured_value / 10000))
+            print("Millimeter: ", format_number_with_commas(measured_value / 1000))
+            print("Nanometer: ", format_number_with_commas(measured_value * 1000))
+            print("Mile: ", format_number_with_commas((measured_value * 0.0000006213689) / 1000))
+            print("Yard: ", format_number_with_commas(measured_value * 0.0000000010936))
+            print("Foot: ", format_number_with_commas(measured_value * 3.28084), "10^-6")
+            print("Inch: ", format_number_with_commas(measured_value * 0.00003937))
+            print("Light Year: ", format_number_with_commas((measured_value / 1000000000000) * 9.46), "X 10^12 km/ly")
             print("_" * 40)
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -256,16 +261,16 @@ def from_nanometer():
             continue
         
         if measured_value > 0:
-            print("Meter: ", measured_value / 1000000000)
-            print("Kilometer: ", measured_value / 1000000000000)
-            print("Centimeter: ", measured_value / 100000000)
-            print("Millimeter: ", measured_value / 1000)
-            print("Micrometer: ", measured_value / 1000)
-            print("Mile: ", (measured_value / 1000000000) * 0.000621371)
-            print("Yard: ", measured_value * 0.000000000946)
-            print("Foot: ", (measured_value / 1000000000) * 1.0936)
-            print("Inch: ", measured_value * 0.00000003937)
-            print("Light Year: ", (measured_value / 1000000000000) * 9.46, "X 10^12 km/ly")
+            print("Meter: ", format_number_with_commas(measured_value / 1000000000))
+            print("Kilometer: ", format_number_with_commas(measured_value / 1000000000000))
+            print("Centimeter: ", format_number_with_commas(measured_value / 100000000))
+            print("Millimeter: ", format_number_with_commas(measured_value / 1000000))
+            print("Micrometer: ", format_number_with_commas(measured_value / 1000))
+            print("Mile: ", format_number_with_commas((measured_value / 1000000000) * 0.000621371))
+            print("Yard: ", format_number_with_commas(measured_value * 0.000000000946))
+            print("Foot: ", format_number_with_commas((measured_value / 1000000000) * 1.0936))
+            print("Inch: ", format_number_with_commas(measured_value * 0.00000003937))
+            print("Light Year: ", format_number_with_commas((measured_value / 1000000000000) * 9.46), "X 10^12 km/ly")
             print("_" * 40)
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -294,16 +299,16 @@ def from_mile():
             continue
         
         if measured_value > 0:
-            print("Meter: ", measured_value * 1609.34)
-            print("Kilometer: ", measured_value * 1.60934)
-            print("Centimeter: ", measured_value * 1.60934 * 100)
-            print("Millimeter: ", measured_value * 1609344)
-            print("Micrometer: ", measured_value * 1609344000)
-            print("Nanometer: ", measured_value * 1609.34 * 1000000000)
-            print("Yard: ", measured_value * 1760)
-            print("Foot: ", measured_value * 5280)
-            print("Inch: ", measured_value * 63360)
-            print("Light Year: ", measured_value / 9.461, "X 10^12 km/ly")
+            print("Meter: ", format_number_with_commas(measured_value * 1609.344))
+            print("Kilometer: ", format_number_with_commas(measured_value * 1.609344))
+            print("Centimeter: ", format_number_with_commas(measured_value * 160934.4))
+            print("Millimeter: ", format_number_with_commas(measured_value * 1609344))
+            print("Micrometer: ", format_number_with_commas(measured_value * 1609344000))
+            print("Nanometer: ", format_number_with_commas(measured_value * 1.609344 * (10 ** 12)))
+            print("Yard: ", format_number_with_commas(measured_value * 1760))
+            print("Foot: ", format_number_with_commas(measured_value * 5280))
+            print("Inch: ", format(measured_value * 63360))
+            print("Light Year: ", format_number_with_commas(measured_value * 1.7011), "X 10^12 km/ly")
             print("_" * 40)
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -332,16 +337,16 @@ def from_yard():
             continue
         
         if measured_value > 0:
-            print("Meter: ", measured_value * 0.9144)
-            print("Kilometer: ", (measured_value * 0.9144) / 1000)
-            print("Centimeter: ", measured_value * 91.44)
-            print("Millimeter: ", measured_value * 914.4)
-            print("Micrometer: ", measured_value * 914400)
-            print("Nanometer: ", measured_value * 914400000)
-            print("Mile: ", measured_value / 1760)
-            print("Foot: ", measured_value * 3)
-            print("Inch: ", measured_value * 36)
-            print("Light Year: ", measured_value / 9.461, "X 10^16 km/ly")
+            print("Meter: ", format_number_with_commas(measured_value * 0.9144))
+            print("Kilometer: ", format_number_with_commas((measured_value * 0.9144) / 1000))
+            print("Centimeter: ", format_number_with_commas(measured_value * 91.44))
+            print("Millimeter: ", format_number_with_commas(measured_value * 914.4))
+            print("Micrometer: ", format_number_with_commas(measured_value * 914400))
+            print("Nanometer: ", format_number_with_commas(measured_value * 914400000))
+            print("Mile: ", format_number_with_commas(measured_value / 1760))
+            print("Foot: ", format_number_with_commas(measured_value * 3))
+            print("Inch: ", format_number_with_commas(measured_value * 36))
+            print("Light Year: ", format_number_with_commas(measured_value / 9.461), "X 10^16 km/ly")
             print("_" * 40)
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -370,16 +375,16 @@ def from_foot():
             continue
         
         if measured_value > 0:
-            print("Meter: ", measured_value * 0.3048)
-            print("Kilometer: ", measured_value * 0.0003048)
-            print("Centimeter: ", measured_value * 30.48)
-            print("Millimeter: ", measured_value * 304.8)
-            print("Micrometer: ", measured_value * 304800)
-            print("Nanometer: ", measured_value * 304800000)
-            print("Mile: ", measured_value / 5280)
-            print("Yard: ", measured_value / 3)
-            print("Inch: ", measured_value / 12)
-            print("Light Year: ", (measured_value * 0.348) / 9.461, "X 10^16 km/ly")
+            print("Meter: ", format_number_with_commas(measured_value * 0.3048))
+            print("Kilometer: ", format_number_with_commas(measured_value * 0.0003048))
+            print("Centimeter: ", format_number_with_commas(measured_value * 30.48))
+            print("Millimeter: ", format_number_with_commas(measured_value * 304.8))
+            print("Micrometer: ", format_number_with_commas(measured_value * 304800))
+            print("Nanometer: ", format_number_with_commas(measured_value * 304800000))
+            print("Mile: ", format_number_with_commas(measured_value / 5280))
+            print("Yard: ", format_number_with_commas(measured_value / 3))
+            print("Inch: ", format_number_with_commas(measured_value * 12))
+            print("Light Year: ", format_number_with_commas((measured_value * 0.348) / 9.461), "X 10^16 km/ly")
             print("_" * 40)
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -408,16 +413,16 @@ def from_inch():
             continue
         
         if measured_value > 0:
-            print("Meter: ", measured_value * 0.0254)
-            print("Kilometer: ", (measured_value * 0.0254) / 1000)
-            print("Centimeter: ", measured_value * 2.54)
-            print("Millimeter: ", measured_value * 25.4)
-            print("Micrometer: ", measured_value * 25400)
-            print("Nanometer: ", measured_value * 25400000)
-            print("Mile: ", measured_value / 63360)
-            print("Yard: ", measured_value / 36)
-            print("Foot: ", measured_value / 12)
-            print("Light Year: ", (measured_value * 0.0254) / 9.461, "X 10^16 m/ly")
+            print("Meter: ", format_number_with_commas(measured_value * 0.0254))
+            print("Kilometer: ", format_number_with_commas((measured_value * 0.0254) / 1000))
+            print("Centimeter: ", format_number_with_commas(measured_value * 2.54))
+            print("Millimeter: ", format_number_with_commas(measured_value * 25.4))
+            print("Micrometer: ", format_number_with_commas(measured_value * 25400))
+            print("Nanometer: ", format_number_with_commas(measured_value * 25400000))
+            print("Mile: ", format_number_with_commas(measured_value / 63360))
+            print("Yard: ", format_number_with_commas(measured_value / 36))
+            print("Foot: ", format_number_with_commas(measured_value / 12))
+            print("Light Year: ", format_number_with_commas((measured_value * 0.0254) / 9.461), "X 10^16 m/ly")
             print("_" * 40)
             
             decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -446,16 +451,16 @@ def from_light_year():
             continue
         
         if measured_value > 0:
-            print("Meter: ", (measured_value * 9.461) * pow(10, 12))
-            print("Kilometer: ", (measured_value * 9.461) * pow(10, 12))
-            print("Centimeter: ", (measured_value * 9.461) * pow(10, 17))
-            print("Millimeter: ", (measured_value * 9.461) * pow(10, 18))
-            print("Micrometer: ", (measured_value * 9.461) * pow(10, 21))
-            print("Nanometer: ", (measured_value * 9.461) * pow(10, 24))
-            print("Mile: ", (measured_value * 9.461) * pow(10, 12))
-            print("Yard: ", (measured_value * 9.461) * pow(10, 15) * 1.09361)
-            print("Foot: ", (measured_value * 9.461) * pow(10, 15) * 3.28084)
-            print("Inch: ", (measured_value * 9.461) * pow(10, 15) * 39.3701)
+            print("Meter: ", format_number_with_commas((measured_value * 9.461) * pow(10, 12)))
+            print("Kilometer: ", format_number_with_commas((measured_value * 9.461) * pow(10, 12)))
+            print("Centimeter: ", format_number_with_commas((measured_value * 9.461) * pow(10, 17)))
+            print("Millimeter: ", format_number_with_commas((measured_value * 9.461) * pow(10, 18)))
+            print("Micrometer: ", format_number_with_commas((measured_value * 9.461) * pow(10, 21)))
+            print("Nanometer: ", format_number_with_commas((measured_value * 9.461) * pow(10, 24)))
+            print("Mile: ", format_number_with_commas(measured_value * 5878559666946))
+            print("Yard: ", format_number_with_commas((measured_value * 9.461) * pow(10, 15) * 1.09361))
+            print("Foot: ", format_number_with_commas((measured_value * 9.461) * pow(10, 15) * 3.28084))
+            print("Inch: ", format_number_with_commas((measured_value * 9.461) * pow(10, 15) * 39.3701))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -484,8 +489,8 @@ def from_celsius():
             continue
         
         if measured_value > 0:
-            print("Kelvin: ", measured_value + 273.15)
-            print("Fahrenheit: ", (measured_value * 1.8) + 32)
+            print("Kelvin: ", format_number_with_commas(measured_value + 273.15))
+            print("Fahrenheit: ", format_number_with_commas((measured_value * 1.8) + 32))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -500,7 +505,7 @@ def from_celsius():
         else:
             error_handler()
 
-def from_kelvin(measured_value):
+def from_kelvin():
     while True:
         clear_screen()
         print("\tTemperature -> Kelvin\n")
@@ -514,8 +519,8 @@ def from_kelvin(measured_value):
             continue
         
         if measured_value > 0:
-            print("Celsius: ", measured_value - 273.16)
-            print("Fahrenheit: ", (1.8 * (measured_value - 273.15)) + 32)
+            print("Celsius: ", format_number_with_commas(measured_value - 273.16))
+            print("Fahrenheit: ", format_number_with_commas((1.8 * (measured_value - 273.15)) + 32))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -530,7 +535,7 @@ def from_kelvin(measured_value):
         else:
             error_handler()
 
-def from_fahrenheit(measured_value):
+def from_fahrenheit():
     while True:
         clear_screen()
         print("\tTemperature -> Fahrenheit\n")
@@ -544,8 +549,8 @@ def from_fahrenheit(measured_value):
             continue
         
         if measured_value > 0:
-            print("Celsius: ", (0.555555556 * (measured_value - 32)))
-            print("Kelvin: ", (0.555555556 * (measured_value - 32)) + 273.15)
+            print("Celsius: ", format_number_with_commas((0.555555556 * (measured_value - 32))))
+            print("Kelvin: ", format_number_with_commas((0.555555556 * (measured_value - 32)) + 273.15))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -574,16 +579,16 @@ def from_square_meter():
             continue
         
         if measured_value > 0:
-            print("Square Kilometer: ", measured_value / 1000000)
-            print("Square Centimeter: ", measured_value * 10000)
-            print("Square Millimeter: ", measured_value * 1000000)
-            print("Square Micrometer: ", measured_value * 1 * pow(10, 12))
-            print("Hectare: ", measured_value / 10000)
-            print("Square Mile: ", measured_value / 2589988.11)
-            print("Square Yard: ", measured_value * 1.19599)
-            print("Square Foot: ", measured_value * 10.7639)
-            print("Square Inch: ", measured_value * 1550.0031)
-            print("Acre: ", measured_value / 4,046.85642)
+            print("Square Kilometer: ", format_number_with_commas(measured_value / 1000000))
+            print("Square Centimeter: ", format_number_with_commas(measured_value * 10000))
+            print("Square Millimeter: ", format_number_with_commas(measured_value * 1000000))
+            print("Square Micrometer: ", format_number_with_commas(measured_value * 1 * pow(10, 12)))
+            print("Hectare: ", format_number_with_commas(measured_value / 10000))
+            print("Square Mile: ", format_number_with_commas(measured_value / 2589988.11))
+            print("Square Yard: ", format_number_with_commas(measured_value * 1.19599))
+            print("Square Foot: ", format_number_with_commas(measured_value * 10.7639))
+            print("Square Inch: ", format_number_with_commas(measured_value * 1550.0031))
+            print("Acre: ", format_number_with_commas(measured_value / 4046.85642))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -611,16 +616,16 @@ def from_square_kilometer():
             return
         
         if measured_value > 0:
-            print("Square Meter: ", measured_value * 1000000)
-            print("Square Centimeter: ", measured_value * pow(10, 10))
-            print("Square Millimeter: ", measured_value * pow(10, 12))
-            print("Square Micrometer: ", measured_value * 1 * pow(10, 12))
-            print("Hectare: ", measured_value / 100)
-            print("Square Mile: ", measured_value / 1.93051)
-            print("Square Yard: ", measured_value * 1195990.05)
-            print("Square Foot: ", measured_value * 1076391040)
-            print("Square Inch: ", measured_value * 1550.0031)
-            print("Acre: ", measured_value / 247.105)
+            print("Square Meter: ", format_number_with_commas(measured_value * 1000000))
+            print("Square Centimeter: ", format_number_with_commas(measured_value * pow(10, 10)))
+            print("Square Millimeter: ", format_number_with_commas(measured_value * 1000000000000))
+            print("Square Micrometer: ", format_number_with_commas(measured_value * 1000000000000000000))
+            print("Hectare: ", format_number_with_commas(measured_value * 100))
+            print("Square Mile: ", format_number_with_commas(measured_value * 0.3861018768))
+            print("Square Yard: ", format_number_with_commas(measured_value * 1195990.05))
+            print("Square Foot: ", format_number_with_commas(measured_value * 10763910.417))
+            print("Square Inch: ", format_number_with_commas(measured_value * 1550003100))
+            print("Acre: ", format_number_with_commas(measured_value * 247.105))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -649,16 +654,16 @@ def from_square_centimeter():
             continue
         
         if measured_value > 0:
-            print("Square Meter: ", measured_value / 10000)
-            print("Square Kilometer: ", measured_value / pow(10, 10))
-            print("Square Millimeter: ", measured_value * 100)
-            print("Square Micrometer: ", measured_value * 1 * pow(10, 8))
-            print("Hectare: ", measured_value / 100000000)
-            print("Square Mile: ", measured_value / 25899881103.36)
-            print("Square Yard: ", measured_value / 8361.2736)
-            print("Square Foot: ", measured_value / 929.0304)
-            print("Square Inch: ", measured_value / 6.4516)
-            print("Acre: ", measured_value / 40468564.2)
+            print("Square Meter: ", format_number_with_commas(measured_value / 10000))
+            print("Square Kilometer: ", format_number_with_commas(measured_value / pow(10, 10)))
+            print("Square Millimeter: ", format_number_with_commas(measured_value * 100))
+            print("Square Micrometer: ", format_number_with_commas(measured_value * 1 * pow(10, 8)))
+            print("Hectare: ", format_number_with_commas(measured_value / 100000000))
+            print("Square Mile: ", format_number_with_commas(measured_value / 25899881103.36))
+            print("Square Yard: ", format_number_with_commas(measured_value / 8361.2736))
+            print("Square Foot: ", format_number_with_commas(measured_value / 929.0304))
+            print("Square Inch: ", format_number_with_commas(measured_value / 6.4516))
+            print("Acre: ", format_number_with_commas(measured_value / 40468564.2))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -687,16 +692,16 @@ def from_square_millimeter():
             continue
         
         if measured_value > 0:
-            print("Square Meter: ", measured_value / 1000000)
-            print("Square Kilometer: ", measured_value / pow(10, 12))
-            print("Square Centimeter: ", measured_value / 100)
-            print("Square Micrometer: ", measured_value * 10 ** 6)
-            print("Hectare: ", measured_value / 10 ** 10)
-            print("Square Mile: ", measured_value / 2.58998811 * 10 ** 12)
-            print("Square Yard: ", measured_value / 836127.36)
-            print("Square Foot: ", measured_value / 92903.04)
-            print("Square Inch: ", measured_value / 645.16)
-            print("Acre: ", measured_value / 40468564.2 * 10 ** 9)
+            print("Square Meter: ", format_number_with_commas(measured_value / 1000000))
+            print("Square Kilometer: ", format_number_with_commas(measured_value / pow(10, 12)))
+            print("Square Centimeter: ", format_number_with_commas(measured_value / 100))
+            print("Square Micrometer: ", format_number_with_commas(measured_value * 10 ** 6))
+            print("Hectare: ", format_number_with_commas(measured_value / 10 ** 10))
+            print("Square Mile: ", format_number_with_commas(measured_value / 2.58998811 * 10 ** 12))
+            print("Square Yard: ", format_number_with_commas(measured_value / 836127.36))
+            print("Square Foot: ", format_number_with_commas(measured_value / 92903.04))
+            print("Square Inch: ", format_number_with_commas(measured_value / 645.16))
+            print("Acre: ", format_number_with_commas(measured_value / 40468564.2 * 10 ** 9))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -725,16 +730,16 @@ def from_square_micrometer():
             continue
         
         if measured_value > 0:
-            print("Square Meter: ", (measured_value / (10 ** 12)) * (10 ** -6))
-            print("Square Kilometer: ", (measured_value * (10 ** 12)) * (10 ** -6))
-            print("Square Centimeter: ", measured_value / (10 ** 8))
-            print("Square Millimeter: ", measured_value / (10 ** 6))
-            print("Hectare: ", measured_value / (10 ** 16))
-            print("Square Mile: ", measured_value / (2.59 * (10 **12)))
-            print("Square Yard: ", measured_value / (8.361 * (10 ** 6)))
-            print("Square Foot: ", measured_value / (9.290 * ( 10 ** 6)))
-            print("Square Inch: ", measured_value / (645.16 * (10 ** 6)))
-            print("Acre: ", measured_value / 4046860000)
+            print("Square Meter: ", format_number_with_commas((measured_value / (10 ** 12)) * (10 ** -6)))
+            print("Square Kilometer: ", format_number_with_commas((measured_value * (10 ** 12)) * (10 ** -6)))
+            print("Square Centimeter: ", format_number_with_commas(measured_value / (10 ** 8)))
+            print("Square Millimeter: ", format_number_with_commas(measured_value / (10 ** 6)))
+            print("Hectare: ", format_number_with_commas(measured_value / (10 ** 16)))
+            print("Square Mile: ", format_number_with_commas(measured_value / (2.59 * (10 **12))))
+            print("Square Yard: ", format_number_with_commas(measured_value / (8.361 * (10 ** 6))))
+            print("Square Foot: ", format_number_with_commas(measured_value / (9.290 * ( 10 ** 6))))
+            print("Square Inch: ", format_number_with_commas(measured_value / (645.16 * (10 ** 6))))
+            print("Acre: ", format_number_with_commas(measured_value / 4046860000))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -763,16 +768,17 @@ def from_hectare():
             continue
         
         if measured_value > 0:
-            print("Square Meter: ", measured_value * 10000)
-            print("Square Kilometer: ", measured_value * 0.01)
-            print("Square Centimeter: ", measured_value * 100000000)
-            print("Square Millimeter: ", measured_value * 10000000000)
-            print("Square Micrometer: ", measured_value * 10000000000000)
-            print("Square Mile: ", measured_value * (0.01 / 2.58999))
-            print("Square Yard: ", measured_value * 11959.9)
-            print("Square Foot: ", measured_value * 107639)
-            print("Square Inch: ", measured_value * 15500031)
-            print("Acre: ", measured_value * 2.47105)
+            print("Square Meter: ", format_number_with_commas(measured_value * 50000))
+            print("Square Kilometer: ", format_number_with_commas(measured_value * 0.05))
+            print("Square Centimeter: ", format_number_with_commas(measured_value * 500000000))
+            print("Square Millimeter: ", format_number_with_commas(measured_value * 50000000000))
+            print("Square Micrometer: ", format_number_with_commas(measured_value * 50000000000000000))
+            print("Square Mile: ", format_number_with_commas(measured_value * 0.0193050938))
+            print("Square Yard: ", format_number_with_commas(measured_value * 59799.502315))
+            print("Square Foot: ", format_number_with_commas(measured_value * 538195.52084))
+            print("Square Inch: ", format_number_with_commas(measured_value * 77500155))
+            print("Acre: ", format_number_with_commas(measured_value * 12.355269073))
+            
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -801,16 +807,16 @@ def from_square_mile():
             continue
         
         if measured_value > 0:
-            print("Square Meter: ", measured_value * 2.59 * (10 ** 6))
-            print("Square Kilometer: ", measured_value * 2.58999)
-            print("Square Centimeter: ", measured_value * 2.58999 * (10 ** 10))
-            print("Square Millimeter: ", measured_value * 2.58999 * (10 ** 12))
-            print("Square Micrometer: ", measured_value * 2.58999 * (10 **18)) 
-            print("Hectare: ", measured_value * 259)
-            print("Square Yard: ", measured_value * 3097600)
-            print("Square Foot: ", measured_value * 27878400)
-            print("Square Inch: ", measured_value * 4.0144896 * (10 ** 9))
-            print("Acre: ", measured_value * 640)
+            print("Square Meter: ", format_number_with_commas(measured_value * 2.59 * (10 ** 6)))
+            print("Square Kilometer: ", format_number_with_commas(measured_value * 2.58999))
+            print("Square Centimeter: ", format_number_with_commas(measured_value * 2.58999 * (10 ** 10)))
+            print("Square Millimeter: ", format_number_with_commas(measured_value * 2.58999 * (10 ** 12)))
+            print("Square Micrometer: ", format_number_with_commas(measured_value * 2.58999 * (10 **18))) 
+            print("Hectare: ", format_number_with_commas(measured_value * 259))
+            print("Square Yard: ", format_number_with_commas(measured_value * 3097600))
+            print("Square Foot: ", format_number_with_commas(measured_value * 27878400))
+            print("Square Inch: ", format_number_with_commas(measured_value * 4.0144896 * (10 ** 9)))
+            print("Acre: ", format_number_with_commas(measured_value * 640))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -839,16 +845,16 @@ def from_square_yard():
             continue
         
         if measured_value > 0:
-            print("Square Meter: ", measured_value * 0.836127)
-            print("Square Kilometer: ", measured_value * 8.3613 * (10 ** -7))
-            print("Square Centimeter: ", measured_value * 8361.27)
-            print("Square Millimeter: ", measured_value * 836127)
-            print("Square Micrometer: ", measured_value * 836127000000) 
-            print("Hectare: ", measured_value * 0.0000836127)
-            print("Square Mile: ", measured_value * 3.2283 * (10 ** -7))
-            print("Square Foot: ", measured_value * 9)
-            print("Square Inch: ", measured_value * 1296)
-            print("Acre: ", measured_value * 0.000206612)
+            print("Square Meter: ", format_number_with_commas(measured_value * 0.836127))
+            print("Square Kilometer: ", format_number_with_commas(measured_value * 8.361276 * (10 ** -7)))
+            print("Square Centimeter: ", format_number_with_commas(measured_value * 8361.2736))
+            print("Square Millimeter: ", format_number_with_commas(measured_value * 836127.36))
+            print("Square Micrometer: ", format_number_with_commas(measured_value * 836127000000)) 
+            print("Hectare: ", format_number_with_commas(measured_value * 0.0000836127))
+            print("Square Mile: ", format_number_with_commas(measured_value * 3.228303429 * (10 ** -7)))
+            print("Square Foot: ", format_number_with_commas(measured_value * 9))
+            print("Square Inch: ", format_number_with_commas(measured_value * 1296))
+            print("Acre: ", format_number_with_commas(measured_value * 0.000206612))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -877,16 +883,16 @@ def from_square_foot():
             continue
         
         if measured_value > 0:
-            print("Square Meter: ", measured_value * 0.092903)
-            print("Square Kilometer: ", measured_value * 9.2903 * (10 ** -8))
-            print("Square Centimeter: ", measured_value * 929.0304)
-            print("Square Millimeter: ", measured_value * 92903.04)
-            print("Square Micrometer: ", measured_value * 92903040000) 
-            print("Hectare: ", measured_value * 9.2903 * (10 ** -6))
-            print("Square Mile: ", measured_value * 3.587 * (10 ** -8))
-            print("Square Yard: ", measured_value * 0.111111)
-            print("Square Inch: ", measured_value * 144)
-            print("Acre: ", measured_value * 2.2957 * (10 ** -5))
+            print("Square Meter: ", format_number_with_commas(measured_value * 0.092903))
+            print("Square Kilometer: ", format_number_with_commas(measured_value * 9.2903 * (10 ** -8)))
+            print("Square Centimeter: ", format_number_with_commas(measured_value * 929.0304))
+            print("Square Millimeter: ", format_number_with_commas(measured_value * 92903.04))
+            print("Square Micrometer: ", format_number_with_commas(measured_value * 92903040000)) 
+            print("Hectare: ", format_number_with_commas(measured_value * 9.2903 * (10 ** -6)))
+            print("Square Mile: ", format_number_with_commas(measured_value * 3.587 * (10 ** -8)))
+            print("Square Yard: ", format_number_with_commas(measured_value * 0.111111))
+            print("Square Inch: ", format_number_with_commas(measured_value * 144))
+            print("Acre: ", format_number_with_commas(measured_value * 2.2957 * (10 ** -5)))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -915,16 +921,16 @@ def from_square_inch():
             continue
         
         if measured_value > 0:
-            print("Square Meter: ", measured_value * 0.00064516)
-            print("Square Kilometer: ", measured_value * 6.4516 * (10 ** -10))
-            print("Square Centimeter: ", measured_value * 6.4516)
-            print("Square Millimeter: ", measured_value * 645.16)
-            print("Square Micrometer: ", measured_value * 645160000) 
-            print("Hectare: ", measured_value * 6.4516 * (10 ** -8))
-            print("Square Mile: ", measured_value * 2.491 * (10 ** -10))
-            print("Square Yard: ", measured_value * 0.00694444)
-            print("Square Foot: ", measured_value * 9)
-            print("Acre: ", measured_value * 1.5942 * (10 ** -7))
+            print("Square Meter: ", format_number_with_commas(measured_value * 0.00064516))
+            print("Square Kilometer: ", format_number_with_commas(measured_value * 6.4516 * (10 ** -10)))
+            print("Square Centimeter: ", format_number_with_commas(measured_value * 6.4516))
+            print("Square Millimeter: ", format_number_with_commas(measured_value * 645.16))
+            print("Square Micrometer: ", format_number_with_commas(measured_value * 645160000))
+            print("Hectare: ", format_number_with_commas(measured_value * 6.4516 * (10 ** -8)))
+            print("Square Mile: ", format_number_with_commas(measured_value * 2.491 * (10 ** -10)))
+            print("Square Yard: ", format_number_with_commas(measured_value * 0.00694444))
+            print("Square Foot: ", format_number_with_commas(measured_value * 9))
+            print("Acre: ", format_number_with_commas(measured_value * 1.5942 * (10 ** -7)))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -953,16 +959,16 @@ def from_acre():
             continue
         
         if measured_value > 0:
-            print("Square Meter: ", measured_value * 4046.86)
-            print("Square Kilometer: ", measured_value * 0.00404686)
-            print("Square Centimeter: ", measured_value * 40468600)
-            print("Square Millimeter: ", measured_value * 4046860000)
-            print("Square Micrometer: ", measured_value * 4046860000000) 
-            print("Hectare: ", measured_value * 0.404686)
-            print("Square Mile: ", measured_value * 0.0015625)
-            print("Square Yard: ", measured_value * 4840)
-            print("Square Foot: ", measured_value * 43560)
-            print("Square Inch: ", measured_value * 6272640)
+            print("Square Meter: ", format_number_with_commas(measured_value * 4046.86))
+            print("Square Kilometer: ", format_number_with_commas(measured_value * 0.00404686))
+            print("Square Centimeter: ", format_number_with_commas(measured_value * 40468600))
+            print("Square Millimeter: ", format_number_with_commas(measured_value * 4046860000))
+            print("Square Micrometer: ", format_number_with_commas(measured_value * 4046860000000)) 
+            print("Hectare: ", format_number_with_commas(measured_value * 0.404686))
+            print("Square Mile: ", format_number_with_commas(measured_value * 0.0015625))
+            print("Square Yard: ", format_number_with_commas(measured_value * 4840))
+            print("Square Foot: ", format_number_with_commas(measured_value * 43560))
+            print("Square Inch: ", format_number_with_commas(measured_value * 6272640))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -991,11 +997,11 @@ def from_cubic_meter():
             continue
         
         if measured_value > 0:
-            print("Cubic Kilometer: ", (measured_value * 1 * (10 ** -9)))
-            print("Cubic Millimeter: ", (measured_value * 1 * (10 ** 9)))
-            print("Liter: ", measured_value * 1000)
-            print("Milliliter: ", (measured_value * 1 * (10 ** 6)))
-            print("US Gallon: ", measured_value * 264.172)
+            print("Cubic Kilometer: ", format_number_with_commas((measured_value * 1 * (10 ** -9))))
+            print("Cubic Millimeter: ", format_number_with_commas((measured_value * 1 * (10 ** 9))))
+            print("Liter: ", format_number_with_commas(measured_value * 1000))
+            print("Milliliter: ", format_number_with_commas((measured_value * 1 * (10 ** 6))))
+            print("US Gallon: ", format_number_with_commas(measured_value * 264.172))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1024,11 +1030,11 @@ def from_cubic_kilometer():
             continue
         
         if measured_value > 0:
-            print("Cubic Meter: ", measured_value * 1 * (10 ** 9))
-            print("Cubic Millimeter: ", (measured_value * 1 * (10 ** 18)))
-            print("Liter: ", measured_value * 1 * (10 ** 12))
-            print("Milliliter: ", (measured_value * 1 * (10 ** 15)))
-            print("US Gallon: ", measured_value * 2.64172 * (10 ** 11))
+            print("Cubic Meter: ", format_number_with_commas(measured_value * 1 * (10 ** 9)))
+            print("Cubic Millimeter: ", format_number_with_commas((measured_value * 1 * (10 ** 18))))
+            print("Liter: ", format_number_with_commas(measured_value * 1 * (10 ** 12)))
+            print("Milliliter: ", format_number_with_commas((measured_value * 1 * (10 ** 15))))
+            print("US Gallon: ", format_number_with_commas(measured_value * 2.64172 * (10 ** 11)))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1057,11 +1063,11 @@ def from_cubic_millimeter():
             continue
         
         if measured_value > 0:
-            print("Cubic Meter: ", measured_value * 1 * (10 ** -9))
-            print("Cubic Kilometer: ", (measured_value * 1 * (10 ** -18)))
-            print("Liter: ", measured_value * 1 * (10 ** -9))
-            print("Milliliter: ", (measured_value * 1 * (10 ** -3)))
-            print("US Gallon: ", measured_value * 2.64172 * (10 ** -7))
+            print("Cubic Meter: ", format_number_with_commas(measured_value * 1 * (10 ** -9)))
+            print("Cubic Kilometer: ", format_number_with_commas((measured_value * 1 * (10 ** -18))))
+            print("Liter: ", format_number_with_commas(measured_value * 1 * (10 ** -9)))
+            print("Milliliter: ", format_number_with_commas((measured_value * 1 * (10 ** -3))))
+            print("US Gallon: ", format_number_with_commas(measured_value * 2.64172 * (10 ** -7)))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1090,11 +1096,11 @@ def from_liter():
             continue
         
         if measured_value > 0:
-            print("Cubic Meter: ", measured_value * 0.001)
-            print("Cubic Kilometer: ", (measured_value * 1 * (10 ** -12)))
-            print("Cubic Millimeter: ", measured_value * 1 * (10 ** 6))
-            print("Milliliter: ", (measured_value * 1000))
-            print("US Gallon: ", measured_value * 0.264172)
+            print("Cubic Meter: ", format_number_with_commas(measured_value * 0.001))
+            print("Cubic Kilometer: ", format_number_with_commas((measured_value * 1 * (10 ** -12))))
+            print("Cubic Millimeter: ", format_number_with_commas(measured_value * 1 * (10 ** 6)))
+            print("Milliliter: ", format_number_with_commas((measured_value * 1000)))
+            print("US Gallon: ", format_number_with_commas(measured_value * 0.264172))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1123,11 +1129,11 @@ def from_milliliter():
             continue
         
         if measured_value > 0:
-            print("Cubic Meter: ", measured_value * 1 * (10 ** -6))
-            print("Cubic Kilometer: ", (measured_value * 1 * (10 ** -15)))
-            print("Cubic Millimeter: ", measured_value * 1000)
-            print("Liter: ", measured_value * 0.001)
-            print("US Gallon: ", measured_value * 0.000264172)
+            print("Cubic Meter: ", format_number_with_commas(measured_value * 1 * (10 ** -6)))
+            print("Cubic Kilometer: ", format_number_with_commas((measured_value * 1 * (10 ** -15))))
+            print("Cubic Millimeter: ", format_number_with_commas(measured_value * 1000))
+            print("Liter: ", format_number_with_commas(measured_value * 0.001))
+            print("US Gallon: ", format_number_with_commas(measured_value * 0.000264172))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1156,11 +1162,11 @@ def from_us_gallon():
             continue
         
         if measured_value > 0:
-            print("Cubic Meter: ", measured_value * 0.00378541)
-            print("Cubic Kilometer: ", (measured_value * 3.78541 * (10 ** -12)))
-            print("Cubic Millimeter: ", measured_value * 3.78541 * (10 ** 6))
-            print("Liter: ", measured_value * 3.78541)
-            print("Milliliter: ", (measured_value * 3,785.41))
+            print("Cubic Meter: ", format_number_with_commas(measured_value * 0.00378541))
+            print("Cubic Kilometer: ", format_number_with_commas((measured_value * 3.78541 * (10 ** -12))))
+            print("Cubic Millimeter: ", format_number_with_commas(measured_value * 3.78541 * (10 ** 6)))
+            print("Liter: ", format_number_with_commas(measured_value * 3.78541))
+            print("Milliliter: ", format_number_with_commas((measured_value * 3,785.41)))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1189,12 +1195,12 @@ def from_kilogram():
             continue
         
         if measured_value > 0:
-            print("Gram: ", measured_value * 1000)
-            print("Milligram: ", measured_value * 1 * (10 ** 6))
-            print("Metric Ton: ", measured_value * 0.001)
-            print("Pound: ", measured_value * 2.20462)
-            print("Carrat: ", measured_value * 5000)
-            print("Atomic Mass Unit: ", measured_value * 6.02214179 * (10 ** 26))
+            print("Gram: ", format_number_with_commas(measured_value * 1000))
+            print("Milligram: ", format_number_with_commas(measured_value * 1 * (10 ** 6)))
+            print("Metric Ton: ", format_number_with_commas(measured_value * 0.001))
+            print("Pound: ", format_number_with_commas(measured_value * 2.20462))
+            print("Carrat: ", format_number_with_commas(measured_value * 5000))
+            print("Atomic Mass Unit: ", format_number_with_commas(measured_value * 6.02214179 * (10 ** 26)))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1223,12 +1229,12 @@ def from_gram():
             continue
         
         if measured_value > 0:
-            print("Kilogram", measured_value * 0.001)
-            print("Milligram: ", measured_value * 1000)
-            print("Metric Ton: ", measured_value * 1 * (10 ** -6))
-            print("Pound: ", measured_value * 0.00220462)
-            print("Carrat: ", measured_value * 5)
-            print("Atomic Mass Unit: ", measured_value * 6.02214179 * (10 ** 23))
+            print("Kilogram", format_number_with_commas(measured_value * 0.001))
+            print("Milligram: ", format_number_with_commas(measured_value * 1000))
+            print("Metric Ton: ", format_number_with_commas(measured_value * 1 * (10 ** -6)))
+            print("Pound: ", format_number_with_commas(measured_value * 0.00220462))
+            print("Carrat: ", format_number_with_commas(measured_value * 5))
+            print("Atomic Mass Unit: ", format_number_with_commas(measured_value * 6.02214179 * (10 ** 23)))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1257,12 +1263,12 @@ def from_milligram():
             continue
         
         if measured_value > 0:
-            print("Kilogram", measured_value * 1 * (10 ** -6))
-            print("Gram: ", measured_value * 0.001)
-            print("Metric Ton: ", measured_value * 1 * (10 ** -9))
-            print("Pound: ", measured_value * 2.20462 * (10 ** -6))
-            print("Carrat: ", measured_value * 0.005)
-            print("Atomic Mass Unit: ", measured_value * 6.02214179 * (10 ** 20))
+            print("Kilogram", format_number_with_commas(measured_value * 1 * (10 ** -6)))
+            print("Gram: ", format_number_with_commas(measured_value * 0.001))
+            print("Metric Ton: ", format_number_with_commas(measured_value * 1 * (10 ** -9)))
+            print("Pound: ", format_number_with_commas(measured_value * 2.20462 * (10 ** -6)))
+            print("Carrat: ", format_number_with_commas(measured_value * 0.005))
+            print("Atomic Mass Unit: ", format_number_with_commas(measured_value * 6.02214179 * (10 ** 20)))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1291,11 +1297,11 @@ def from_metric_ton():
             continue
         
         if measured_value > 0:
-            print("Kilogram", measured_value * 1000)
-            print("Gram: ", measured_value * 1 * (10 ** 6))
-            print("Milligram: ", measured_value * 1 * (10 ** 9))
-            print("Pound: ", measured_value * 2204.62)
-            print("Carrat: ", measured_value * 5 * (10 ** 6))
+            print("Kilogram", format_number_with_commas(measured_value * 1000))
+            print("Gram: ", format_number_with_commas(measured_value * 1 * (10 ** 6)))
+            print("Milligram: ", format_number_with_commas(measured_value * 1 * (10 ** 9)))
+            print("Pound: ", format_number_with_commas(measured_value * 2204.62))
+            print("Carrat: ", format_number_with_commas(measured_value * 5 * (10 ** 6)))
             print("Atomic Mass Unit: ", measured_value * 6.02214179 * (10 ** 29))
             print("_" * 40)
             
@@ -1359,12 +1365,12 @@ def from_carrat():
             continue
         
         if measured_value > 0:
-            print("Kilogram", measured_value * 0.0002)
-            print("Gram: ", measured_value * 0.2)
-            print("Milligram: ", measured_value * 200)
-            print("Metric Ton: ", measured_value * 2 * (10 ** -7))
-            print("Pound: ", measured_value * 0.000440925)
-            print("Atomic Mass Unit: ", measured_value * 1.20442881 * (10 ** 23))
+            print("Kilogram", format_number_with_commas(measured_value * 0.0002))
+            print("Gram: ", format_number_with_commas(measured_value * 0.2))
+            print("Milligram: ", format_number_with_commas(measured_value * 200))
+            print("Metric Ton: ", format_number_with_commas(measured_value * 2 * (10 ** -7)))
+            print("Pound: ", format_number_with_commas(measured_value * 0.000440925))
+            print("Atomic Mass Unit: ", format_number_with_commas(measured_value * 1.20442881 * (10 ** 23)))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1393,12 +1399,12 @@ def from_amu():
             continue
         
         if measured_value > 0:
-            print("Kilogram", measured_value * 1.66053906660 * (10 ** -27))
-            print("Gram: ", measured_value * 1.66053906660 * (10 ** -24))
-            print("Milligram: ", measured_value * 1.66053906660 * (10 ** -21))
-            print("Metric Ton: ", measured_value * 1.66053906660 * (10 ** -30))
-            print("Pound: ", measured_value * 3.660867 * (10 ** -27))
-            print("Carrat: ", measured_value * 8.3027 * (10 ** -23))
+            print("Kilogram", format_number_with_commas(measured_value * 1.66053906660 * (10 ** -27)))
+            print("Gram: ", format_number_with_commas(measured_value * 1.66053906660 * (10 ** -24)))
+            print("Milligram: ", format_number_with_commas(measured_value * 1.66053906660 * (10 ** -21)))
+            print("Metric Ton: ", format_number_with_commas(measured_value * 1.66053906660 * (10 ** -30)))
+            print("Pound: ", format_number_with_commas(measured_value * 3.660867 * (10 ** -27)))
+            print("Carrat: ", format_number_with_commas(measured_value * 8.3027 * (10 ** -23)))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1428,15 +1434,15 @@ def from_second():
         
         if measured_value > 0:
             print("\tTime -> Second\n")
-            print("Millisecond: ", measured_value * 1000)
-            print("Microsecond: ", measured_value * 1000000)
-            print("Nanosecond: ", measured_value * 1000000000)
-            print("Minute: ", measured_value / 60)
-            print("Hour: ", measured_value / 3600)
-            print("Day: ", measured_value / 86400)
-            print("Week: ", measured_value / 604800)
-            print("Month: ", measured_value / 2629746)
-            print("Year: ", measured_value / 31557600)
+            print("Millisecond: ", format_number_with_commas(measured_value * 1000))
+            print("Microsecond: ", format_number_with_commas(measured_value * 1000000))
+            print("Nanosecond: ", format_number_with_commas(measured_value * 1000000000))
+            print("Minute: ", format_number_with_commas(measured_value / 60))
+            print("Hour: ", format_number_with_commas(measured_value / 3600))
+            print("Day: ", format_number_with_commas(measured_value / 86400))
+            print("Week: ", format_number_with_commas(measured_value / 604800))
+            print("Month: ", format_number_with_commas(measured_value / 2629746))
+            print("Year: ", format_number_with_commas(measured_value / 31557600))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1465,15 +1471,15 @@ def from_millisecond():
             continue
         
         if measured_value > 0:
-            print("Second: ", measured_value / 1000)
-            print("Microsecond: ", measured_value * 1000)
-            print("Nanosecond: ", measured_value * 1000000)
-            print("Minute: ", measured_value / 60000)
-            print("Hour: ", measured_value / 3600000)
-            print("Day: ", measured_value / 86400000)
-            print("Week: ", measured_value / 604800000)
-            print("Month: ", measured_value / 2629746000)
-            print("Year: ", measured_value / 31557600000)
+            print("Second: ", format_number_with_commas(measured_value / 1000))
+            print("Microsecond: ", format_number_with_commas(measured_value * 1000))
+            print("Nanosecond: ", format_number_with_commas(measured_value * 1000000))
+            print("Minute: ", format_number_with_commas(measured_value / 60000))
+            print("Hour: ", format_number_with_commas(measured_value / 3600000))
+            print("Day: ", format_number_with_commas(measured_value / 86400000))
+            print("Week: ", format_number_with_commas(measured_value / 604800000))
+            print("Month: ", format_number_with_commas(measured_value / 2629746000))
+            print("Year: ", format_number_with_commas(measured_value / 31557600000))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1502,15 +1508,15 @@ def from_microsecond(measured_value):
             continue
         
         if measured_value > 0:
-            print("Second: ", measured_value / 1000000)
-            print("Millisecond: ", measured_value / 1000)
-            print("Nanosecond: ", measured_value * 1000)
-            print("Minute: ", measured_value / 60000000)
-            print("Hour: ", measured_value / 3600000000)
-            print("Day: ", measured_value / 86400000000)
-            print("Week: ", measured_value / 604800000000)
-            print("Month: ", measured_value / 2629746000000)
-            print("Year: ", measured_value / 31557600000000)
+            print("Second: ", format_number_with_commas(measured_value / 1000000))
+            print("Millisecond: ", format_number_with_commas(measured_value / 1000))
+            print("Nanosecond: ", format_number_with_commas(measured_value * 1000))
+            print("Minute: ", format_number_with_commas(measured_value / 60000000))
+            print("Hour: ", format_number_with_commas(measured_value / 3600000000))
+            print("Day: ", format_number_with_commas(measured_value / 86400000000))
+            print("Week: ", format_number_with_commas(measured_value / 604800000000))
+            print("Month: ", format_number_with_commas(measured_value / 2629746000000))
+            print("Year: ", format_number_with_commas(measured_value / 31557600000000))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1539,15 +1545,15 @@ def from_nanosecond(measured_value):
             continue
         
         if measured_value > 0:
-            print("Second: ", measured_value / 1000000000)
-            print("Millisecond: ", measured_value / 1000000)
-            print("Microsecond: ", measured_value / 1000)
-            print("Minute: ", measured_value / 60000000000)
-            print("Hour: ", measured_value / 3600000000000)
-            print("Day: ", measured_value / 86400000000000)
-            print("Week: ", measured_value / 604800000000000)
-            print("Month: ", measured_value / 2629746000000000)
-            print("Year: ", measured_value / 31557600000000000)
+            print("Second: ",format_number_with_commas(measured_value / 1000000000))
+            print("Millisecond: ", format_number_with_commas(measured_value / 1000000))
+            print("Microsecond: ", format_number_with_commas(measured_value / 1000))
+            print("Minute: ", format_number_with_commas(measured_value / 60000000000))
+            print("Hour: ", format_number_with_commas(measured_value / 3600000000000))
+            print("Day: ", format_number_with_commas(measured_value / 86400000000000))
+            print("Week: ", format_number_with_commas(measured_value / 604800000000000))
+            print("Month: ", format_number_with_commas(measured_value / 2629746000000000))
+            print("Year: ", format_number_with_commas(measured_value / 31557600000000000))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1576,15 +1582,15 @@ def from_minute(measured_value):
             continue
         
         if measured_value > 0:
-            print("Second: ", measured_value * 60)
-            print("Millisecond: ", measured_value * 60000)
-            print("Microsecond: ", measured_value * 60000000)
-            print("Nanosecond: ", measured_value * 60000000000)
-            print("Hour: ", measured_value / 60)
-            print("Day: ", measured_value / 1440)
-            print("Week: ", measured_value / 10080)
-            print("Month: ", measured_value / 43830)
-            print("Year: ", measured_value / 525600)
+            print("Second: ", format_number_with_commas(measured_value * 60))
+            print("Millisecond: ", format_number_with_commas(measured_value * 60000))
+            print("Microsecond: ", format_number_with_commas(measured_value * 60000000))
+            print("Nanosecond: ", format_number_with_commas(measured_value * 60000000000))
+            print("Hour: ", format_number_with_commas(measured_value / 60))
+            print("Day: ", format_number_with_commas(measured_value / 1440))
+            print("Week: ", format_number_with_commas(measured_value / 10080))
+            print("Month: ", format_number_with_commas(measured_value / 43830))
+            print("Year: ", format_number_with_commas(measured_value / 525600))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1613,15 +1619,15 @@ def from_hour(measured_value):
             continue
         
         if measured_value > 0:
-            print("Second: ", measured_value * 3600)
-            print("Millisecond: ", measured_value * 3.6 * (10 ** 6))
-            print("Microsecond: ", measured_value * 3.6 * (10 ** 9))
-            print("Nanosecond: ", measured_value * 3.6 * (10 ** 12))
-            print("Minute: ", measured_value * 60)
-            print("Day: ", measured_value / 24)
-            print("Week: ", measured_value / 168)
-            print("Month: ", measured_value / 730.5)
-            print("Year: ", measured_value / 8766)
+            print("Second: ", format_number_with_commas(measured_value * 3600))
+            print("Millisecond: ", format_number_with_commas(measured_value * 3.6 * (10 ** 6)))
+            print("Microsecond: ", format_number_with_commas(measured_value * 3.6 * (10 ** 9)))
+            print("Nanosecond: ", format_number_with_commas(measured_value * 3.6 * (10 ** 12)))
+            print("Minute: ", format_number_with_commas(measured_value * 60))
+            print("Day: ", format_number_with_commas(measured_value / 24))
+            print("Week: ", format_number_with_commas(measured_value / 168))
+            print("Month: ", format_number_with_commas(measured_value / 730.5))
+            print("Year: ", format_number_with_commas(measured_value / 8766))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1650,15 +1656,15 @@ def from_day(measured_value):
             continue
         
         if measured_value > 0:
-            print("Second: ", measured_value * 86400)
-            print("Millisecond: ", measured_value * 8.64 * (10 ** 7))
-            print("Microsecond: ", measured_value * 8.64 * (10 ** 10))
-            print("Nanosecond: ", measured_value * 8.64 * (10 ** 13))
-            print("Minute: ", measured_value * 1440)
-            print("Hour: ", measured_value * 24)
-            print("Week: ", measured_value / 7)
-            print("Month: ", measured_value / 30.44)
-            print("Year: ", measured_value / 365.25)
+            print("Second: ", format_number_with_commas(measured_value * 86400))
+            print("Millisecond: ", format_number_with_commas(measured_value * 8.64 * (10 ** 7)))
+            print("Microsecond: ", format_number_with_commas(measured_value * 8.64 * (10 ** 10)))
+            print("Nanosecond: ", format_number_with_commas(measured_value * 8.64 * (10 ** 13)))
+            print("Minute: ", format_number_with_commas(measured_value * 1440))
+            print("Hour: ", format_number_with_commas(measured_value * 24))
+            print("Week: ", format_number_with_commas(measured_value / 7))
+            print("Month: ", format_number_with_commas(measured_value / 30.44))
+            print("Year: ", format_number_with_commas(measured_value / 365.25))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1687,15 +1693,15 @@ def from_week(measured_value):
             continue
         
         if measured_value > 0:
-            print("Second: ", measured_value * 604800)
-            print("Millisecond: ", measured_value * 6.048 * (10 ** 8))
-            print("Microsecond: ", measured_value * 6.048 * (10 ** 11))
-            print("Nanosecond: ", measured_value * 6.048 * (10 ** 14))
-            print("Minute: ", measured_value * 10080)
-            print("Hour: ", measured_value * 168)
-            print("Day: ", measured_value * 7)
-            print("Month: ", measured_value / 434524)
-            print("Year: ", measured_value / 52.1429)
+            print("Second: ",format_number_with_commas(measured_value * 604800))
+            print("Millisecond: ", format_number_with_commas(measured_value * 6.048 * (10 ** 8)))
+            print("Microsecond: ", format_number_with_commas(measured_value * 6.048 * (10 ** 11)))
+            print("Nanosecond: ", format_number_with_commas(measured_value * 6.048 * (10 ** 14)))
+            print("Minute: ", format_number_with_commas(measured_value * 10080))
+            print("Hour: ", format_number_with_commas(measured_value * 168))
+            print("Day: ", format_number_with_commas(measured_value * 7))
+            print("Month: ", format_number_with_commas(measured_value / 434524))
+            print("Year: ", format_number_with_commas(measured_value / 52.1429))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1724,15 +1730,15 @@ def from_month(measured_value):
             continue
         
         if measured_value > 0:
-            print("Second: ", measured_value * 30.44 * 24 * 60 * 60)
-            print("Millisecond: ", measured_value * 30.44 * 24 * 60 * 60 * (10 ** 3))
-            print("Microsecond: ", measured_value * 30.44 * 24 * 60 * 60 * (10 ** 6))
-            print("Nanosecond: ", measured_value * 30.44 * 24 * 60 * 60 * (10 ** 9))
-            print("Minute: ", measured_value * 30.44 * 24 * 60)
-            print("Hour: ", measured_value * 30.44 * 24)
-            print("Day: ", measured_value * 30.44)
-            print("Week: ", measured_value * 4.34524)
-            print("Year: ", measured_value / 12)
+            print("Second: ", format_number_with_commas(measured_value * 30.44 * 24 * 60 * 60))
+            print("Millisecond: ", format_number_with_commas(measured_value * 30.44 * 24 * 60 * 60 * (10 ** 3)))
+            print("Microsecond: ", format_number_with_commas(measured_value * 30.44 * 24 * 60 * 60 * (10 ** 6)))
+            print("Nanosecond: ", format_number_with_commas(measured_value * 30.44 * 24 * 60 * 60 * (10 ** 9)))
+            print("Minute: ", format_number_with_commas(measured_value * 30.44 * 24 * 60))
+            print("Hour: ", format_number_with_commas(measured_value * 30.44 * 24))
+            print("Day: ", format_number_with_commas(measured_value * 30.44))
+            print("Week: ", format_number_with_commas(measured_value * 4.34524))
+            print("Year: ", format_number_with_commas(measured_value / 12))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1761,15 +1767,15 @@ def from_year(measured_value):
             continue
         
         if measured_value > 0:
-            print("Second: ", measured_value * 365.25 * 24 * 60 * 60)
-            print("Millisecond: ", measured_value * 365.25 * 24 * 60 * 60 * (10 ** 3))
-            print("Microsecond: ", measured_value * 365.25 * 24 * 60 * 60 * (10 ** 6))
-            print("Nanosecond: ", measured_value * 365.25 * 24 * 60 * 60 * (10 ** 9))
-            print("Minute: ", measured_value * 365.25 * 24 * 60)
-            print("Hour: ", measured_value * 365.25 * 24)
-            print("Day: ", measured_value * 365.25)
-            print("Week: ", measured_value * 52.1429)
-            print("Month: ", measured_value * 12)
+            print("Second: ", format_number_with_commas(measured_value * 365.25 * 24 * 60 * 60))
+            print("Millisecond: ", format_number_with_commas(measured_value * 365.25 * 24 * 60 * 60 * (10 ** 3)))
+            print("Microsecond: ", format_number_with_commas(measured_value * 365.25 * 24 * 60 * 60 * (10 ** 6)))
+            print("Nanosecond: ", format_number_with_commas(measured_value * 365.25 * 24 * 60 * 60 * (10 ** 9)))
+            print("Minute: ", format_number_with_commas(measured_value * 365.25 * 24 * 60))
+            print("Hour: ", format_number_with_commas(measured_value * 365.25 * 24))
+            print("Day: ", format_number_with_commas(measured_value * 365.25))
+            print("Week: ", format_number_with_commas(measured_value * 52.1429))
+            print("Month: ", format_number_with_commas(measured_value * 12))
             print("_" * 40)
             
             user_decision = input("If you want continue in here then press 'y'. Other wise it's goes to back: ")
@@ -1826,7 +1832,7 @@ def length():
                 break
             else:
                 print("Unknown option. Please try again!")
-                loading_animation(1)
+                loading_animation(1.5)
                 continue
         else:
             exit_program()
@@ -1856,7 +1862,7 @@ def temperature():
                 break
             else:
                 print("Unknown option. Please try again!")
-                loading_animation(1)
+                loading_animation(1.5)
                 continue
         else:
             exit_program()
@@ -1902,7 +1908,7 @@ def area():
                 break
             else:
                 print("Unknown option. Please try again!")
-                loading_animation(1)
+                loading_animation(1.5)
                 continue
         else:
             exit_program()
@@ -1938,7 +1944,7 @@ def volume():
                 break
             else:
                 print("Unknown option. Please try again!")
-                loading_animation(1)
+                loading_animation(1.5)
                 continue
         else:
             exit_program()
@@ -1976,7 +1982,7 @@ def weight():
                 break
             else:
                 print("Unknown option. Please try again!")
-                loading_animation(1)
+                loading_animation(1.5)
                 continue
         else:
             exit_program()
@@ -2019,7 +2025,7 @@ def time_conversion():
                 break
             else:
                 print("Unknown option. Please try again!")
-                loading_animation(1)
+                loading_animation(1.5)
                 continue
         else:
             exit_program()
