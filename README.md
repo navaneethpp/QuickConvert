@@ -17,7 +17,7 @@ QuickConvert offers a simple command-line interface for converting measurements 
 ## Requirements
 
 - Python 3.6 or higher
-- No additional libraries required
+- os, time, itertools & sys libraries
 
 ## Installation
 
