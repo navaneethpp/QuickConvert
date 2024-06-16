@@ -1,87 +1,77 @@
 # QuickConvert
 
-**QuickConvert** is a Python tool designed for quick and efficient unit conversions. It supports converting various length units such as meters, kilometers, centimeters, millimeters, micrometers, and more.
+QuickConvert is a Python command-line utility for converting various units of measurement including length, temperature, area, volume, weight, and time.
 
-## Description
+---
 
-QuickConvert offers a simple command-line interface for converting measurements between different length units. This tool is ideal for students, engineers, and anyone who needs to perform unit conversions swiftly and accurately.
+## Table of Contents
+
+- [Features](#features)
+- [Usage](#usage)
+- [Installation](#installation)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+---
 
 ## Features
 
-- Converts between multiple length units
-- User-friendly command-line interface
-- Supports common length units such as meters, kilometers, and inches
-- Provides accurate and reliable conversions
-- Open-source and easy to extend
+- **Conversion Categories**: Supports conversion for length, temperature, area, volume, weight, and time units.
+- **User-friendly Interface**: Simple command-line interface with a menu-driven system.
+- **Extensible**: Easily expandable with additional units and categories.
+- **Error Handling**: Gracefully handles invalid user inputs.
+- **Interactive**: Allows users to choose units and convert measurements interactively.
 
-## Requirements
-
-- Python 3.6 or higher
-- os, time, itertools & sys libraries
-
-## Installation
-
-1. **Clone the repository:**
-    ```bash
-    git clone https://github.com/navaneethpp/QuickConvert.git
-    ```
-
-2. **Navigate to the project directory:**
-    ```bash
-    cd QuickConvert
-    ```
+---
 
 ## Usage
 
-To use QuickConvert, run the Python script and follow the prompts to enter your measurements and choose the units for conversion.
+To use QuickConvert, follow these steps:
 
-1. **Run the script:**
-    ```bash
-    python quickconvert.py
-    ```
+1. **Clone the repository:**
 
-2. **Follow the prompts:**
-    - Choose the type of measurement (currently supports only length).
-    - Enter the value and select the unit for conversion.
-    - View the converted values in various units.
+   ```bash
+   git clone https://github.com/navaneethpp/QuickConvert.git
+   cd QuickConvert
 
-### Example
+2. **Run the program**
+   #### Windows
+   ```bash
+   py pgm.py
+   ```
+    #### Linux
+   ```bash
+   python3 pgm.py
 
-Here's an example of how to use QuickConvert:
+## Installation
+To install and run QuickConvert locally, you need:
+- Python 3.x
+- Git (optional, for cloning the repository)
 
-```text
-Choose the correct option by the number:
-1. Length
-2. Temperature
-3. Area
-4. Volume
-5. Weight
-6. Time
-Enter your choice: 1
+**Follow these steps:**
+1. **Clone therepository:**
+   ```bash
+    git clone https://github.com/navaneethpp/QuickConvert.git
+    cd QuickConvert
 
-Choose measured value unit:
-1. Meter
-2. Kilometer
-3. Centimeter
-4. Millimeter
-5. Micrometer
-6. Nanometer
-7. Mile
-8. Yard
-9. Foot
-10. Inch
-11. Light Year
-Enter the value: 1
+2. **Run the program:**
+   ```bash
+   python main.py
 
-Enter the measurement: 100
+## Contributing
+- Fork the repository.
+- Create a new branch (git checkout -b feature-new-conversion).
+- Make your changes.
+- Commit your changes (git commit -am 'Add new conversion feature').
+- Push to the branch (git push origin feature-new-conversion).
+- Create a new Pull Request.
+For major changes, please open an issue first to discuss what you would like to change.
 
-Kilometer:  0.1
-Centimeter:  10000
-Millimeter:  100000
-Micrometer:  100000000
-Nanometer:  100000000000
-Mile:  0.0621371
-Yard:  109.36
-Foot:  328.08
-Inch:  3937
-Light Year:  0.946 X 10^15 km/ly
+## License
+This project is licensed under the GNU General Public License (GPL) - see the LICENSE file for details.
+
+## Contact
+- Author: Navaneeth P P
+- GitHub: https://github.com/navaneethpp
+  Feel free to reach out if you have any questions, issues, or suggestions regarding QuickConvert.
